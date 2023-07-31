@@ -3,7 +3,7 @@ class Solution {
         val input = array
         val hashMap = HashMap<Int, Int>()
         for(idx in 0 until input.size){
-            if(idx == 0 || !hashMap.containsKey(input[idx])){
+            if(!hashMap.containsKey(input[idx])){
                 hashMap[input[idx]] = 1
             }else{
                 hashMap[input[idx]] = hashMap[input[idx]]!!.plus(1)

@@ -1,71 +1,16 @@
 class Solution {
     fun solution(numbers: String): Long {
-        var answer: String = ""
-        var count = 0
-        while (count < numbers.length) {
-            val digit =
-                numbers[count].toString() + numbers[count + 1].toString() + numbers[count + 2].toString()
-            when (digit) {
-                "zer" -> {
-                    answer += "0"
-                    count += 4
-                }
+        var answer = numbers
+        val hashMap = hashMapOf(
+            "zero" to "0",
+            "one" to "1", "two" to "2", "three" to "3", "four" to "4", "five" to "5",
+            "six" to "6", "seven" to "7", "eight" to "8", "nine" to "9"
+        )
 
-                "one" -> {
-                    answer += "1"
-                    count += 3
-
-                }
-
-                "two" -> {
-                    answer += "2"
-                    count += 3
-
-                }
-
-                "thr" -> {
-                    answer += "3"
-                    count += 5
-
-                }
-
-                "fou" -> {
-                    answer += "4"
-                    count += 4
-
-                }
-
-                "fiv" -> {
-                    answer += "5"
-                    count += 4
-
-                }
-
-                "six" -> {
-                    answer += "6"
-                    count += 3
-
-                }
-
-                "sev" -> {
-                    answer += "7"
-                    count += 5
-
-                }
-
-                "eig" -> {
-                    answer += "8"
-                    count += 5
-
-                }
-
-                "nin" -> {
-                    answer += "9"
-                    count += 4
-
-                }
-            }
+        hashMap.forEach {
+            answer = answer.replace(it.key, it.value)
         }
+
         return answer.toLong()
     }
 }

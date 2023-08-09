@@ -4,10 +4,10 @@ class Solution {
         var cnt = 0
         for (element in quiz) {
             val tempArr = element.split(" ")
-            for (j in tempArr.indices step 5) {
-                when (tempArr[j + 1]) {
+            for (i in tempArr.indices step 5) {
+                when (tempArr[i + 1]) {
                     "+" -> {
-                        if (tempArr[j].toInt() + tempArr[j + 2].toInt() == tempArr[j + 4].toInt()) {
+                        if (tempArr[i].toInt() + tempArr[i + 2].toInt() == tempArr[i + 4].toInt()) {
                             answer[cnt] = "O"
                         } else {
                             answer[cnt] = "X"
@@ -15,7 +15,7 @@ class Solution {
                     }
 
                     "-" -> {
-                        if (tempArr[j].toInt() - tempArr[j + 2].toInt() == tempArr[j + 4].toInt()) {
+                        if (tempArr[i].toInt() - tempArr[i + 2].toInt() == tempArr[i + 4].toInt()) {
                             answer[cnt] = "O"
                         } else {
                             answer[cnt] = "X"
